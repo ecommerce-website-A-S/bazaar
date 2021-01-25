@@ -31,6 +31,9 @@ function UploadButtons() {
     <Navbar3 />
 
     <SwipeableTextMobileStepper />
+    <br/>
+    <SingleLineGridList />
+    <br/>
 <div     style ={{  backgroundColor : '#92a8d1' ,  borderRadius: '55px ' , border : '18px ' ,   border : 'solid  '}} >
     <Grid container  >
 <Grid  item  style ={{margin: "4%"  , marginLeft : '14%'}}>
@@ -73,9 +76,7 @@ Saving Money </div>
 </div>
 <br/>
     <br/>
-    <br/>
-    <SingleLineGridList />
-    <br/>
+
     <br/>
     <br/>
     <SvgIconsSize />
