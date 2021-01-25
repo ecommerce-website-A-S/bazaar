@@ -10,10 +10,23 @@ import ListItemAvatar from "@material-ui/core/ListItemAvatar";
 import Grid from "@material-ui/core/Grid";
 import container from "@material-ui/core/container";
 import axios from "axios";
+import MenuItem from '@material-ui/core/MenuItem';
+import InputLabel from '@material-ui/core/InputLabel';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import Button from '@material-ui/core/Button';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
+import SimpleBottomNavigation from "../footer.jsx";
 
 const ClothesItem = (props) => (
   <tr>
-    <td>{props.item.title}</td>
+    <td  >{props.item.title}</td>
     <td>{props.item.category}</td>
     <td>{props.item.description}</td>
 
@@ -103,58 +116,106 @@ class Items extends React.Component {
           justify="center"
           wrap="wrap"
         >
+<br/>
+<br/>
+<br/>
+<div   style ={{  backgroundColor : '#92a8d1' ,  borderRadius: '50px ' , border : '20px ' ,   border : 'solid  ' ,  width :'100%'}}>
+<p style={{  fontFamily :"Cursive" ,fontSize :'30px' , textAlign :"center" }}> The best part about selling your products and services online is that <br/>people outside local borders can order them too .<br/> You are not restricted to a simple brick-and-mortar location to sell your products.</p>
+</div>
+<br/>
+<br/>
+<br/>
 
 
-
-          <div className="container text-center border border-light p-9">
+          <div style={{    border:' 20px' }} >
             <table className="table">
               <thead className="thead">
+              <th  style={{fontFamily:'Monospace	' ,fontSize:'30px'  }} > select a category</th>
                 <tr>
-                  <th> select a category</th>
+
                   <th>
-                    <select
-                      ref="userInput"
-                      required="true"
+
+                  <FormControl  style={ { width : '80% '}}>
+                  <InputLabel  variant="outlined"  style={ {   width : '80% '}}></InputLabel>
+                    <Select
+
+
+                      variant="outlined"
                       className="form-control"
                       value={this.state.Category}
                       onChange={this.onChangeCategory.bind(this)}
                     >
-                      <option value=""></option>
-                      <option id="option">choose category</option>
+                      <MenuItem value=""></MenuItem>
+                      <MenuItem>choose category</MenuItem>
 
-                      <option id="option" value="cars">
-                        cars
-                      </option>
-                      <option id="option" value="small-business-for-sale">
+                      <MenuItem  value="cars">  cars    </MenuItem>
+                      <MenuItem  value="small-business-for-sale">
                         small-business-for-sale
-                      </option>
-                      <option id="option" value="food recipes">
+                      </MenuItem>
+                      <MenuItem  value="food recipes">
                         food recipes
-                      </option>
-                      <option id="option" value="shoes">
+                      </MenuItem>
+                      <MenuItem  value="shoes">
                         shoes
-                      </option>
-                      <option id="option" value="clothes">
+                      </MenuItem>
+                      <MenuItem  value="clothes">
                         clothes
-                      </option>
-                    </select>
+                      </MenuItem>
+                      </Select>
+            </FormControl>
                   </th>
                   <th>
                     {" "}
-                    <button onClick={this.Rest.bind(this)}> Reset</button>{" "}
+
+
+                    <Button
+               style={ {  width : '80% '}}
+               variant="contained"
+                type="button"
+                value="Info"
+                onClick={this.Rest.bind(this)}
+                color="secondary"
+              >
+               Reset
+              </Button>
+
+
                   </th>
                 </tr>
-                <tr>
-                  <th>title </th>
-                  <th>Category</th>
-                  <th>Description</th>
-                  <th>Image</th>
-                </tr>
+             {/* //////////////start render the table////////////// */}
+
+
+ <TableContainer >
+      <Table  aria-label="simple table">
+        <TableHead>
+          <TableRow>
+            <TableCell>title </TableCell>
+            <TableCell align="right">Category</TableCell>
+            <TableCell align="right">Description</TableCell>
+            <TableCell align="right">Image</TableCell>
+          </TableRow>
+        </TableHead>
+
+        <TableBody>{this.itemsList()}</TableBody>
+
+        </Table>
+    </TableContainer>
+
+
+
+
+
+
+
+
+
+
               </thead>
-              <tbody>{this.itemsList()}</tbody>
+
             </table>
           </div>
         </Grid>{" "}
+        <SimpleBottomNavigation />
       </div>
     );
   }

@@ -13,12 +13,12 @@ import signIN from "./signIN.jsx";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    // color: "#000000",
+
   },
   menuButton: {
     marginRight: theme.spacing(10),
     color: "#000000",
-    // backgroud-color: "#000000",
+
   },
   title: {
     flexGrow: 1,
@@ -30,7 +30,7 @@ function Navbar() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" style={{ background: "#4dd0e1" }}>
+      <AppBar position="static" style={{ background: "gray" }}>
         <Toolbar>
           {/* <IconButton
             edge="start"
@@ -62,7 +62,7 @@ function Navbar() {
               </NavLink>
             </nav>
           </Typography>
-          <Typography variant="h6"> Faz3etak </Typography>
+          <Typography variant="h6"> BAZZAR </Typography>
         </Toolbar>
       </AppBar>
     </div>

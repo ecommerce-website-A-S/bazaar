@@ -5,6 +5,7 @@ import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import container from '@material-ui/core/container';
+import SimpleBottomNavigation from "../footer.jsx";
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
@@ -128,7 +129,7 @@ class signIN extends React.Component {
             <Button
               style={{ margin: "100px 215px 0px 100px" }}
               variant="contained"
-              color="primary"
+              color="secondary"
               onClick={() => {
                 this.login();
               }}
@@ -137,8 +138,19 @@ class signIN extends React.Component {
             </Button>
           </form>
         </Grid>
+        <br/>
+      <br/>
+      <br/>
+      <br/>
       </div>
+
+      <SimpleBottomNavigation />
+      <br/>
+      <br/>
+      <br/>
+      <br/>
        </Grid>
+
     );
   }
 }

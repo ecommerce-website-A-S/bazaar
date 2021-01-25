@@ -3,7 +3,6 @@ var bodyParser = require('body-parser');
 var app = express();
 var mysql = require('mysql');
 var path = require('path')
-
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
 const cors = require("cors");
@@ -12,7 +11,6 @@ const jwt = require('jsonwebtoken')
 const http = require("http");
 const bcrypt = require("bcrypt");
 var fs = require('fs');
-
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.json());
@@ -37,23 +35,19 @@ app.use(
     },
   })
 );
-
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.json());
 app.use(express.static(__dirname + "/../react-client/dist"));
-
-var MyDataBase = mysql.createConnection({
-      host     : 'localhost',
-      user     : 'root',
-      password : 'password',
-      database: 'faz3etak'
+var MyDataBase  = mysql.createPool({
+  host :'us-cdbr-east-02.cleardb.com',
+      user: 'bd50aba9b49a3d',
+      password:'a93c1eef',
+      database:'heroku_af8b3edbbdd529b'
     });
-
     //updates our database
     app.put("/update", function(req, res) {
       console.log(req)
-
     const title = req.body.title;
     const description = req.body.description;
     const category = req.body.category;
@@ -69,8 +63,6 @@ var MyDataBase = mysql.createConnection({
       )
       res.send("result");
        });
-
-
       //insert my items into the database
       app.post('/insert', (req, res) => {
       const Title=req.body.title;
@@ -81,8 +73,6 @@ var MyDataBase = mysql.createConnection({
       MyDataBase.query("INSERT INTO items (title,description,category,image,userId) VALUES (?,?,?,?,?)", [Title , Description , Category,Image,Userid],(err,result)=>{
        console.log(err);
       } ) })
-
-
 //return all items
       app.get("/Items1", (req, res) => {
        MyDataBase.query("SELECT * FROM items", function (err, result, fields) {
@@ -90,17 +80,14 @@ var MyDataBase = mysql.createConnection({
       else
       res.send(result)
       });  })
-
 //sign up
 app.post("/SignUp1", (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
-
   bcrypt.hash(password, saltRounds, (err, hash) => {
     if (err) {
       console.log(err);
     }
-
     MyDataBase.query(
       "INSERT INTO users (email, password) VALUES (?,?)",
       [email, hash],
@@ -110,9 +97,7 @@ app.post("/SignUp1", (req, res) => {
     );
   });
 });
-
 //delete item
-
 app.delete('/delete1:id',(req,res) => {
     console.log(req.params.id);
     MyDataBase.query('DELETE FROM `items` WHERE `id`=?', [req.params.id], function (error, results, fields) {
@@ -121,16 +106,13 @@ app.delete('/delete1:id',(req,res) => {
       res.end('Record has been deleted!');
     });
    });
-
     //gets all the data in the databse
    app.get ('/profile1',function(req,res){
             MyDataBase.query("SELECT * FROM users;",function (err, result, fields) {
               if (err) throw err
               else
               res.send(result)
-
              } )})
-
        app.post("/signIN1", (req, res) => {
       const email = req.body.email;
       const password = req.body.password;
@@ -143,7 +125,6 @@ app.delete('/delete1:id',(req,res) => {
          if (err) {
         res.send({ err: err });
       }
-
          if (result.length > 0) {
            //check the bycrypted password
           bcrypt.compare(password, result[0].password, (error, response) => {
@@ -168,12 +149,10 @@ app.delete('/delete1:id',(req,res) => {
            }
            );
             });
-
       app.get("/signIN1", (req, res) => {
       res.send( req.session.user );
       }
       );
-
       app.get('/*', function(req, res) {
       res.sendFile(path.join(__dirname, '/../react-client/dist/index.html'), function(err) {
         if (err) {
@@ -181,7 +160,6 @@ app.delete('/delete1:id',(req,res) => {
         }
        })
       })
-
     app.listen(3000, function() {
     console.log('listening on port 3000!');
     });
