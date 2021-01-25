@@ -13,6 +13,10 @@ import Grid from '@material-ui/core/Grid';
 import container from '@material-ui/core/container';
 import InputBase from '@material-ui/core/InputBase';
 import Image from 'material-ui-image'
+import MenuItem from '@material-ui/core/MenuItem';
+
+import Select from '@material-ui/core/Select';
+import SimpleBottomNavigation from "../../footer.jsx";
 
 class Update extends Component {
   constructor(props) {
@@ -142,6 +146,7 @@ handleUpdate(event) {
       //we used material ui
       render() {
         return (
+          <div>
            <Grid container
              item xs={16}
           direction='column'
@@ -152,87 +157,96 @@ handleUpdate(event) {
           justify='center'
           wrap='wrap'
           >
-          <div className={container}>
-              <Typography style={ { textAlign: "center", fontFamily: 'BlinkMacSystemFont', fontSize: '3rem'}} >FAZ3ETAK </Typography>
+
+          <div  style={{   marginLeft : '7% '    ,  border: "26px ", borderStyle: 'groove', height: '400%' , padding : '4% ' , width : '75%' , textAlign: 'center'  }} >
+          <p  style={{  fontFamily :"Cursive" }} > BAZZAR is better than any other online store offering and selling your product in the easiest way</p>
+          <p   style={{  fontFamily :"Cursive" }}  >Sell  your product </p>
+
            <div>
-         <img src={this.state.url || "http://via.placeholder.com/50 50"} alt="firebase-image"  style={ {  padding: "5px 5px 5px 5px"}} />
-         <input  type="file" onChange={this.handleChange.bind(this)}  style={ {  padding: "5px 5px 5px 5px "}}/>
-         <div  style={ { paddingLeft: " 510px "}} >
-            <Button  onClick={this.handleUpload.bind(this)} variant="contained" color="primary"  >Upload</Button>
-          <br/><br/>
-        </div>
+
+
           <br />
 
           <br />
          </div>
-         <div
-            style={{
-              border: "  1px solid black",
-              borderRadius: "100px",
-              width:"500px",
-              margin: "auto",
-            }}
-          >
+         <div  >
             <div onSubmit={this.handleSubmit}  >
-             <div  style={ { paddingBottom: " 10px ", paddingLeft:"170px" , paddingTop:"70px"}}>
-                <TextField  id="standard-textarea"
-              label="Title"
-              placeholder="Placeholder"
-              multiline
-              variant="filled"
-                  value={this.state.title}
-                  onChange={this.handleChangeTitle}
-                />
-                </div>
-              <div  style={ { paddingBottom: " 10px ", paddingLeft:"170px"}}>
-                <TextField  id="standard-textarea"
-              label="Description"
-              placeholder="Description"
-              multiline
-              variant="filled"
-                  value={this.state.description}
-                  onChange={this.handleChangeDescription}
-                />
-                </div>
+            <label>Title</label>
+            <br/>
+            <TextField id="outlined-basic"          value={this.state.title}    onChange={this.handleChangeTitle} variant="outlined"    style={ {  width : '80% '}} />
+            <br/>
              <br/>
-             <div  style={ { paddingBottom: " 10px ", paddingLeft:"170px"}}>
-             <FormControl >
-            <InputLabel htmlFor="demo-customized-select-native"> category:</InputLabel>
-            <NativeSelect
+             <label>Description</label>
+              <br/>
+
+
+              <TextField id="outlined-basic"   value={this.state.description}   onChange={this.handleChangeDescription} variant="outlined"    style={ {   width : '80% '}} />
+
+
+<br/>
+<br/>
+
+
+             <br/>
+             <div  >
+             <label>category</label>
+              <br/>
+             <FormControl  style={ { width : '80% '}}>
+            <InputLabel  variant="outlined"  style={ { width : '80% ', marginLeft:' 40px ' , width : '80% '}}></InputLabel>
+            <Select
+          labelId="demo-simple-select-label"
+          value={this.state.category}
+             variant="outlined"
               id="demo-customized-select-native"
-              value={this.state.category}
                 onChange={this.handleChangeCategory}
             >
-              <option aria-label="None" value="" />
-              <option  value ='cars'>{this.state.categories[0]}</option>
-              <option  value='small-business-for-sale '>{this.state.categories[1]}</option>
-              <option  value ='food recipes'>{this.state.categories[2]}</option>
-              <option  value='shoes'>{this.state.categories[3]}</option>
-              <option  value ='clothes'>{this.state.categories[4]}</option>
+              <MenuItem  value=""> </MenuItem>
+              <MenuItem  value ='cars'>{this.state.categories[0]}</MenuItem>
+              <MenuItem  value='small-business-for-sale '>{this.state.categories[1]}</MenuItem>
+              <MenuItem  value ='food recipes'>{this.state.categories[2]}</MenuItem>
+              <MenuItem  value='shoes'>{this.state.categories[3]}</MenuItem>
+              <MenuItem  value ='clothes'>{this.state.categories[4]}</MenuItem>
 
-            </NativeSelect>
-          </FormControl>
+              </Select>
+            </FormControl>
           </div>
 
+
+
+
               <br></br>
               <br></br>
-              <div style={ { paddingBottom: " 20px ", paddingLeft:"170px"}}>
+              <div style={ { paddingBottom: " 20px "}}>
+              <img src={this.state.url || "http://via.placeholder.com/50 50"} alt="firebase-image"  style={ {  padding: "5px 5px 5px 5px"}} />
+         <input  type="file" onChange={this.handleChange.bind(this)}  style={ {  padding: "5px 5px 5px 5px "}}/>
+         <div  style={ { paddingLeft: " 510px "}} >
+            <Button  onClick={this.handleUpload.bind(this)} variant="contained"   color="secondary"  >Upload</Button>
+          <br/><br/>
+        </div>
               <Button
+               style={ {  width : '80% '}}
                variant="contained"
                 type="button"
                 value="Info"
                 onClick={this.handleUpdate}
+                color="secondary"
               >
                Update
               </Button>
-
-              <Button  onClick = {() => this.DeleteItem() }> delete</Button>
+<br/><div>
+              <Button    style={ {  marginTop : '2%', width : '80% '}}
+               variant="contained"
+                type="button"
+                value="Info" color="secondary" onClick = {() => this.DeleteItem() }> delete</Button>
+                </div>
 
             </div>
             </div>
           </div>
           </div>
           </Grid>
+                    <SimpleBottomNavigation />
+                    </div>
         );
       }
     }

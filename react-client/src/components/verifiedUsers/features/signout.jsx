@@ -42,8 +42,8 @@ class SignOut extends React.Component {
 
       <Typography style={{ textAlign:'center' ,fontSize:'50px', fontFamily:'Cursive	'}}>are you sure you want to sign out ? </Typography>
    <br/> <br/>
-      <Button  style={{marginLeft: '300px',background : 'rgb(70, 102, 97)', color: 'white'}} onClick=  {this.signout.bind(this)}>yes</Button>
-      <Button  style={{ marginLeft:'5px' ,background : 'rgb(70, 102, 97)',color: 'white'}} onClick= {this.nosignout.bind(this)}>
+      <Button  color="secondary"    variant="contained" onClick=  {this.signout.bind(this)}>yes</Button>
+      <Button  style={{ marginLeft:'5px'}} color="secondary"    variant="contained" onClick= {this.nosignout.bind(this)}>
       no</Button>
         </div> </Grid>)
         }

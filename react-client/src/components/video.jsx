@@ -11,7 +11,8 @@ import AirplanemodeActiveRoundedIcon from "@material-ui/icons/AirplanemodeActive
 
 const useStyles = makeStyles({
   root: {
-    width: 1350,
+    width: 1950,
+
   },
 });
 
@@ -28,15 +29,37 @@ function SimpleSponsersNavigation() {
       showLabels
       className={classes.root}
     >
-      <BottomNavigationAction
-        label="ABOUD Bank"
+      <BottomNavigationAction  style ={{ maginRight : "242px "}}
+        label="Jordan Islamic Bank"
         icon={<AccountBalanceSharpIcon />}
       />
-      <BottomNavigationAction label="SARA" icon={<StorefrontSharpIcon />} />
+       <BottomNavigationAction
+        label=" International Bank"
+        icon={<AccountBalanceSharpIcon />}
+      />
+       <BottomNavigationAction
+        label="Islamic  Arab Bank"
+        icon={<AccountBalanceSharpIcon />}
+      />
+       <BottomNavigationAction
+        label="Bank"
+        icon={<AccountBalanceSharpIcon />}
+      />
+       <BottomNavigationAction
+        label="Bank al Etihad"
+        icon={<AccountBalanceSharpIcon />}
+      />
+      <BottomNavigationAction label="Shop" icon={<StorefrontSharpIcon />} />
+      <BottomNavigationAction label="Shop" icon={<StorefrontSharpIcon />} />
       <BottomNavigationAction
-        label="RAHEMA Airlines"
+        label="Airlines"
         icon={<AirplanemodeActiveRoundedIcon />}
       />
+      <BottomNavigationAction
+        label="Airlines"
+        icon={<AirplanemodeActiveRoundedIcon />}
+      />
+
     </BottomNavigation>
   );
 }

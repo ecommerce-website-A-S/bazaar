@@ -25,7 +25,7 @@ function Navbar2() {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      <AppBar position="static" style={{ background: "#4dd0e1" }}>
+      <AppBar position="static" style={{ background: "gray" }}>
         <Toolbar>
           <IconButton
             edge="start"
