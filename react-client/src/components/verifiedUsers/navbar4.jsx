@@ -49,6 +49,7 @@ function Navbar2() {
 
             </nav>
           </Typography>
+          <Typography variant="h6"> BAZZAR </Typography>
         </Toolbar>
       </AppBar>
     </div>

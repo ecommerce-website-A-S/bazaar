@@ -62,7 +62,7 @@ function Navbar() {
               </NavLink>
             </nav>
           </Typography>
-          <Typography variant="h6"> Faz3etak </Typography>
+          <Typography variant="h6"> BAZZAR </Typography>
         </Toolbar>
       </AppBar>
     </div>
