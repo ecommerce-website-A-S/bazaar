@@ -15,28 +15,35 @@ const tutorialSteps = [
   {
     label: "San Francisco – Oakland Bay Bridge, United States",
     imgPath:
-      "https://mondrian.mashable.com/uploads%252Fcard%252Fimage%252F887294%252Fcc7a8372-57c9-40e9-8f03-353d4d627153.jpeg%252F950x534__filters%253Aquality%252880%2529.jpeg",
+    "https://cdn4.vectorstock.com/i/1000x1000/21/53/shopping-bazar-logo-design-concept-for-inspiration-vector-30492153.jpg"
+
+
+
+     ,
   },
   {
     label: "Bird",
     imgPath:
-      "https://www.incimages.com/uploaded_files/image/1920x1080/getty_663974538_353364.jpg",
+      "https://mondrian.mashable.com/uploads%252Fcard%252Fimage%252F887294%252Fcc7a8372-57c9-40e9-8f03-353d4d627153.jpeg%252F950x534__filters%253Aquality%252880%2529.jpeg",
   },
   {
     label: "Bali, Indonesia",
     imgPath:
-      "https://images.theconversation.com/files/278908/original/file-20190611-32373-1m41xwl.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=926&fit=clip",
+       "https://media.istockphoto.com/photos/women-walking-with-shopping-bags-in-the-city-picture-id1084070220?k=6&m=1084070220&s=612x612&w=0&h=pp7mjtHcHftYW0iVp67ITs0SSfWEiKCwv7OKENN6e60=",
   },
   {
     label: "NeONBRAND Digital Marketing, Las Vegas, United States",
     imgPath:
-      "https://image.freepik.com/free-vector/happy-shop-logo-template_57516-57.jpg",
+      "https://previews.123rf.com/images/hasloo/hasloo1407/hasloo140700505/29846097-woman-shopping-concept-collage-with-different-shopping-symbols-around-girl.jpg",
   },
   {
-    label: "Goč, Serbia",
+    label: "NeONBRAND Digital Marketing, Las Vegas, United States",
     imgPath:
-      "https://static.scientificamerican.com/sciam/cache/file/2627E62A-175A-4CAA-A641DEAFE4872505.jpg",
+      "https://image.shutterstock.com/z/stock-photo-happy-asian-shopping-girls-on-white-background-176280200.jpg  ",
   },
+
+
+
 ];
 
 const useStyles = makeStyles((theme) => ({

@@ -2,6 +2,7 @@ import React from "react";
 import $ from "jquery";
 import TextField from "@material-ui/core/TextField";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
+import SimpleBottomNavigation from "../footer.jsx";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 //css styling code
@@ -63,6 +64,16 @@ class SignUp extends React.Component {
   }
   render() {
     return (
+      <Grid container
+      item xs={16}
+   direction='column'
+   alignContent='stretch'
+   direction="row"
+   alignItems='stretch'
+   alignItems='stretch'
+   justify='center'
+   wrap='wrap'
+   >
       <div
         style={{
           border: "  1px solid grey",
@@ -108,7 +119,7 @@ class SignUp extends React.Component {
             <Button
               style={{ margin: "100px 215px 0px 100px" }}
               variant="contained"
-              color="primary"
+              color="secondary"
               onClick={() => {
                 this.register();
               }}
@@ -117,8 +128,20 @@ class SignUp extends React.Component {
               Sign Up
             </Button>
           </form>
+          <br/>
+      <br/>
+      <br/>
+      <br/>
         </Grid>
+
+      <br/>
+
+
       </div>
+      <br/>
+      <SimpleBottomNavigation />
+      <br/>
+      </Grid>
     );
   }
 }

@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
   menuButton: {
     marginRight: theme.spacing(10),
     color: "#000000",
-    // backgroud-color: "#000000",
+
   },
   title: {
     flexGrow: 1,
@@ -29,7 +29,7 @@ function Navbar() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" style={{ background: "#4dd0e1" }}>
+      <AppBar position="static" style={{ background: "gray" }}>
         <Toolbar>
           {/* <IconButton
             edge="start"

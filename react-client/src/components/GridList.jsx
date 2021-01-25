@@ -10,8 +10,8 @@ import Typography from "@material-ui/core/Typography";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    padding: "80px 200px 100px 400px ",
-    margin: 2000,
+
+    margin: 17000,
     display: "flex",
     flexWrap: "wrap",
     justifyContent: "space-around",
@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
   },
   gridList: {
     flexWrap: "nowrap",
-    width: 2000,
+    width: 2500,
 
     // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
     transform: "translateZ(0)",
@@ -39,9 +39,16 @@ export default function SingleLineGridList() {
 
   return (
     <div className={classes.root}>
-      <Typography style={{fontFamily:'Cursive' ,fontSize:'30px' , textAlign:'center'}}> Choose the right e-commerce store
-More flexibility, faster to market and showcase your products. Find out what faz3etak can do for you.</Typography>
-      <GridList className={classes.gridList} cols={2.5}>
+      <br/>
+<br/>
+<br/>
+      <Typography style={{fontFamily:'Monospace	' ,fontSize:'40px' , textAlign:'center'}}> Choose the right e-commerce store
+      <br/>
+More flexibility, faster to market and showcase your products.<br/> Find out what <span style= {{backgroundColor: "#fc3f4f"}}>BAZZAR</span> can do for you.</Typography>
+<br/>
+<br/>
+<br/>
+      {/* <GridList className={classes.gridList} cols={2.5}>
         {tileData.map((tile) => (
           <GridListTile key={tile.img}>
             <img src={tile.img} alt={tile.title} />
@@ -59,7 +66,7 @@ More flexibility, faster to market and showcase your products. Find out what faz
             />
           </GridListTile>
         ))}
-      </GridList>
+      </GridList> */}
     </div>
   );
             }
